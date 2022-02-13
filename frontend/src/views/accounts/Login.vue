@@ -3,7 +3,7 @@
     <div class="max-w-md w-full space-y-8">
       <div>
         <a href="/">
-            <img class="mx-auto h-12 w-auto" src="../assets/logo.png" alt="SAFFRON" />
+            <img class="mx-auto h-12 w-auto" src="/src/assets/logo.png" alt="SAFFRON" />
         </a>
         <h2 class="mt-6 text-center text-3xl text-gray-900">Sign in to your account</h2>
         
@@ -33,12 +33,7 @@
         </div>
 
         <div>
-          <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-base font-bold rounded-full text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-              <LockClosedIcon class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
-            </span>
-            Sign in
-          </button>
+          <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-base font-bold rounded-full text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sign in</button>
         </div>
       </form>
     </div>
@@ -46,15 +41,35 @@
 </template>
 
 <script>
+
+import {mapActions, mapGetters} from 'vuex';
+
 export default {
   name: "Login",
-  components: {},
-  data: () => {
-    return {
-      username: "",
-      password: "",
-    };
-  },
+  data(){
+        return{
+            username:'',
+            password:''
+        }
+    },
+    computed:{
+      ...mapGetters('auth',{
+        isAuthenticated:'isAuthenticated'
+      })
+    },
+    methods:{
+        ...mapActions('auth',{
+          actionLogin:'login'
+        }),
+        async login(){
+           await this.actionLogin({username:this.username, password:this.password});
+           if(this.isAuthenticated){
+            //  alert('login sucess');
+           }else{
+             alert('failed to login')
+           }
+        }
+  }
 };
 
 </script>

@@ -14,7 +14,7 @@
         <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
 
           <!-- Welcome banner -->
-          <WelcomeBanner />
+          <!-- <WelcomeBanner /> -->
           
           <!-- Dashboard actions -->
           <div class="sm:flex sm:justify-between sm:items-center mb-8">
@@ -43,11 +43,11 @@
           <!-- Cards -->
           <div class="grid grid-cols-12 gap-6">
 
-            <!-- Line chart (Acme Plus) -->
+            <!-- Line chart (SAFFRON Plus) -->
             <DashboardCard01 />
-            <!-- Line chart (Acme Advanced) -->
+            <!-- Line chart (SAFFRON Advanced) -->
             <DashboardCard02 />
-            <!-- Line chart (Acme Professional) -->
+            <!-- Line chart (SAFFRON Professional) -->
             <DashboardCard03 />
             <!-- Bar chart (Direct vs Indirect) -->
             <DashboardCard04 />
@@ -105,6 +105,8 @@ import DashboardCard12 from '../partials/dashboard/DashboardCard12.vue'
 import DashboardCard13 from '../partials/dashboard/DashboardCard13.vue'
 import Banner from '../partials/Banner.vue'
 
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Dashboard',
   components: {
@@ -129,6 +131,7 @@ export default {
     DashboardCard13,
     Banner,
   },
+  
   setup() {
 
     const sidebarOpen = ref(false)

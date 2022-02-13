@@ -1,17 +1,17 @@
 import vuex from "vuex";
-import auth from "./modules/authentication";
+import auth from "./modules/auth";
 
 
 
 const store = new vuex.Store({
     modules: {
-        auth: auth,
+        auth:auth
     },
     state: {
-        isLoggedIn: true,
+        
     },
     getters: {
-        isLoggedIn: state => state.isLoggedIn,
+        
     },
     mutations: {},
     actions: {},

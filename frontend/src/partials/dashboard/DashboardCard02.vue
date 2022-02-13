@@ -16,7 +16,7 @@
           </li>
         </EditMenu>
       </header>
-      <h2 class="text-lg font-semibold text-gray-800 mb-2">Acme Advanced</h2>
+      <h2 class="text-lg font-semibold text-gray-800 mb-2">SAFFRON Advanced</h2>
       <div class="text-xs font-semibold text-gray-400 uppercase mb-1">Sales</div>
       <div class="flex items-start">
         <div class="text-3xl font-bold text-gray-800 mr-2">$17,489</div>

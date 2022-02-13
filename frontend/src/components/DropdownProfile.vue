@@ -9,7 +9,7 @@
     >
       <img class="w-8 h-8 rounded-full" :src="UserAvatar" width="32" height="32" alt="User" />
       <div class="flex items-center truncate">
-        <span class="truncate ml-2 text-sm font-medium group-hover:text-gray-800">Acme Inc.</span>
+        <span class="truncate ml-2 text-sm font-medium group-hover:text-gray-800">{{gettersAuthData.userName}}</span>
         <svg class="w-3 h-3 shrink-0 ml-1 fill-current text-gray-400" viewBox="0 0 12 12">
           <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
         </svg>
@@ -25,8 +25,8 @@
     >
       <div v-show="dropdownOpen" class="origin-top-right z-10 absolute top-full min-w-44 bg-white border border-gray-200 py-1.5 rounded shadow-lg overflow-hidden mt-1" :class="align === 'right' ? 'right-0' : 'left-0'">
         <div class="pt-0.5 pb-2 px-3 mb-1 border-b border-gray-200">
-          <div class="font-medium text-gray-800">Acme Inc.</div>
-          <div class="text-xs text-gray-500 italic">Administrator</div>
+          <div class="font-medium text-gray-800">{{gettersAuthData.userName}}</div>
+          <div class="text-xs text-gray-500 italic">{{gettersAuthData.userId}}</div>
         </div>
         <ul
           ref="dropdown"
@@ -48,6 +48,7 @@
 <script>
 import { ref, onMounted, onUnmounted } from 'vue'
 import UserAvatar from '../images/user-avatar-32.png'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'DropdownProfile',
@@ -56,7 +57,15 @@ export default {
     return {
       UserAvatar: UserAvatar,
     }
-  },  
+  },
+  
+  computed:{
+      ...mapGetters('auth',{
+          gettersAuthData:'getAuthData'
+      })
+    },
+
+
   setup() {
 
     const dropdownOpen = ref(false)

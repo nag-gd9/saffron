@@ -16,7 +16,8 @@ SECRET_KEY = 'django-insecure-ihb$*#t934jsqp#t*d2!mju+=i&24kp+ruajy!q=s#)7%f((gb
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://8000-naggd9-saffron-odav1i506ko.ws-us31.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io']
+
 
 
 # Application definition
@@ -36,7 +37,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',

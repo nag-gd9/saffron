@@ -1,7 +1,7 @@
 <template>
   <div v-show="open" class="fixed bottom-0 right-0 w-full md:bottom-8 md:right-12 md:w-auto z-60">
     <div class="bg-gray-800 text-gray-50 text-sm p-3 md:rounded shadow-lg flex justify-between">
-      <div>👉 <a class="hover:underline" href="https://github.com/cruip/vuejs-admin-dashboard-template" target="_blank" rel="noreferrer">Download Mosaic Lite on GitHub</a></div>
+      <div><span></span></div>
       <button class="text-gray-500 hover:text-gray-400 ml-5" @click="open = false">
         <span class="sr-only">Close</span>
         <svg class="w-4 h-4 shrink-0 fill-current" viewBox="0 0 16 16">
